@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Classification</title>
+</head>
+<body>
+    <div id="upload_mode">
+        <label>Dandelion Files: <input type="file" id="dandelion_files_uploader" multiple accept="image/*"></label>
+        <br>
+        <label>Other Files: <input type="file" id="other_files_uploader" multiple accept="image/*"></label>
+        <br>
+        <input type="number" id="amount_input" placeholder="number of images to classify">
+        <br><br>
+        <button onclick="start_classifying()">Start Classifying</button>
+    </div>
+
+    <div hidden id="classification_mode">
+        <progress id="progress_bar"></progress><label id="progress_label">0/0</label>
+        <div id="image_preview" style="height: 256px;"></div>
+        <br>
+        <button onclick="mark_dandelion()">Dandelion</button>
+        <button onclick="mark_other()">Other</button>
+        <button onclick="go_back()">Go Back</button>
+        <br><br>
+        <button onclick="evaluate_human_classification()">Evaluate Classification</button>
+    </div>
+
+    <div hidden id="evaluation_mode"></div>
+
+    <script src="./human_classifier.js"></script>
+</body>
+</html>
